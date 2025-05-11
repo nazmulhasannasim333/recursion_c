@@ -2,11 +2,10 @@
 
 void func(int arr[], int n, int i)
 {
-    if (i == n)
+    if (i < 0)
         return;
-    func(arr, n, i + 1); // reverse
     printf("%d\n", arr[i]);
-    func(arr, n, i + 1);
+    func(arr, n, i - 1);
 }
 
 int main()
@@ -18,7 +17,7 @@ int main()
     {
         scanf("%d", &arr[i]);
     }
-    func(arr, n, 0);
+    func(arr, n, n - 1);
 
     return 0;
 }
